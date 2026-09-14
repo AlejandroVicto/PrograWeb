@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+.contenedor-principal {
+    background-color: #ffffff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.descripcion {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.grupo-input {
+    margin-bottom: 15px;
+}
+
+.etiqueta {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.campo-texto {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.campo-lectura {
+    background-color: #e9ecef;
+    color: #495057;
+    outline: none;
+    cursor: not-allowed;
+}
+
+.boton-primario {
+    width: 100%;
+    padding: 10px;
+    background-color: lightgreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.boton-primario:hover {
+    background-color: greenyellow;
+}
