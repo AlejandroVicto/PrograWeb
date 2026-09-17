@@ -16,52 +16,42 @@ const appTareas = (() => {
     };
 })();
 
-document.addEventListener('DOMContentLoaded', () => {
-    const inputNuevaTarea = document.getElementById("nuevaTarea");
-    const btnAgregar = document.getElementById("btnAgregar");
-    const listaTareas = document.getElementById("listaTareas");
+function interfazAgregarTarea() {
+    var input = document.getElementById("nuevaTarea").value.trim();
+    
+    if (!input) {
+        return Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Tarea vacía'
+        });
+    }
 
-    const renderizarTareas = () => {
-        listaTareas.innerHTML = appTareas.get().map((t, i) => `
-            <div>
-                <input type="text" value="${t.tarea}" readonly>
-                <button data-index="${i}">X</button>
-            </div>
-        `).join("");
-    };
-
-    btnAgregar.addEventListener('click', () => {
-        const input = inputNuevaTarea.value.trim();
-        if (!input) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'La tarea no puede estar vacía'
-            });
-            return;
-        }
-        appTareas.add({ tarea: input, completada: false });
-        inputNuevaTarea.value = "";
-        renderizarTareas();
-    });
-
-    listaTareas.addEventListener('click', (e) => {
-        if (e.target.tagName === 'BUTTON') {
-            const index = e.target.getAttribute('data-index');
-            Swal.fire({ 
-                title: '¿Borrar la tarea?', 
-                icon: 'warning', 
-                showCancelButton: true,
-                confirmButtonText: 'Sí, borrar',
-                cancelButtonText: 'Cancelar'
-            }).then(r => {
-                if (r.isConfirmed) { 
-                    appTareas.del(index); 
-                    renderizarTareas(); 
-                }
-            });
-        }
-    });
-
+    appTareas.add({ tarea: input, completada: false });
+    document.getElementById("nuevaTarea").value = "";
     renderizarTareas();
-});
+}
+
+function interfazEliminarTarea(i) {
+    Swal.fire({ 
+        title: '¿Borrar?', 
+        icon: 'warning', 
+        showCancelButton: true 
+    }).then(r => {
+        if (r.isConfirmed) { 
+            appTareas.del(i); 
+            renderizarTareas(); 
+        }
+    });
+}
+
+function renderizarTareas() {
+    document.getElementById("listaTareas").innerHTML = appTareas.get().map((t, i) => `
+        <div>
+            <input type="text" value="${t.tarea}" readonly>
+            <button onclick="interfazEliminarTarea(${i})">X</button>
+        </div>
+    `).join("");
+}
+
+window.onload = renderizarTareas;

@@ -3,54 +3,41 @@ const restar = (a, b) => a - b;
 const multiplicar = (a, b) => a * b;
 const dividir = (a, b) => b !== 0 ? a / b : 'Error: División por cero';
 
-const calcularOperacion = (op) => {
-    const inputNum1 = document.getElementById('numero1');
-    const inputNum2 = document.getElementById('numero2');
-    const inputResultado = document.getElementById('resultado');
-
-    const num1Value = inputNum1.value.trim();
-    const num2Value = inputNum2.value.trim();
-
-    if (num1Value === '' || num2Value === '') {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Por favor completa ambos campos numéricos.'
-        });
-        inputResultado.value = '';
-        return;
-    }
-
-    const a = parseFloat(num1Value);
-    const b = parseFloat(num2Value);
+const calcularOperacion = (operacion) => {
+    const a = parseFloat(document.getElementById('numero1').value);
+    const b = parseFloat(document.getElementById('numero2').value);
 
     if (isNaN(a) || isNaN(b)) {
+        document.getElementById('resultado').value = '';
         Swal.fire({
             icon: 'error',
             title: 'Error de entrada',
-            text: 'Ingresa únicamente números válidos.'
+            text: 'Ingresa números válidos en ambos campos.'
         });
-        inputResultado.value = '';
         return;
     }
 
     let res;
-    switch (op) {
-        case 'suma': res = sumar(a, b); break;
-        case 'resta': res = restar(a, b); break;
-        case 'multiplicacion': res = multiplicar(a, b); break;
-        case 'division': res = dividir(a, b); break;
+
+    if (operacion === 'suma') {
+        res = sumar(a, b);
+    } else if (operacion === 'resta') {
+        res = restar(a, b);
+    } else if (operacion === 'multiplicacion') {
+        res = multiplicar(a, b);
+    } else if (operacion === 'division') {
+        res = dividir(a, b);
     }
 
     if (typeof res === 'string') {
+        document.getElementById('resultado').value = '';
         Swal.fire({
             icon: 'error',
             title: 'Error matemático',
             text: res
         });
-        inputResultado.value = '';
     } else {
-        inputResultado.value = res;
+        document.getElementById('resultado').value = res;
     }
 };
 
