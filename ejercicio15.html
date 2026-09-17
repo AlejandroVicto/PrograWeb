@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiantes</title>
+    <link rel="stylesheet" href="css/ejercicio15.css">
+
+
+    <script src="js/ejercicio15.js"></script>
+</head>
+
+<body>
+    <div style="margin: 20px; text-align: left;">
+        <a href="index.html"
+            style="text-decoration: none; color: #007BFF; font-weight: bold; font-family: Arial, sans-serif;">Regresar
+            al índice</a>
+    </div>
+    
+    <div class="contenedor-principal">
+        <h1>Registro de Estudiantes</h1>
+        <p>Operaciones con Objetos</p>
+
+        <div class="grupo-input">
+            <label for="nombre" class="etiqueta">Nombre del estudiante:</label>
+            <input type="text" id="nombre" class="campo-texto" placeholder="Ej: Juan">
+        </div>
+        <div class="grupo-input">
+            <label for="calificacion" class="etiqueta">Calificación:</label>
+            <input type="number" id="calificacion" class="campo-texto" placeholder="Ej: 85">
+        </div>
+        
+        <button type="button" id="btnAgregar">Agregar estudiante</button>
+        <button type="button" id="btnCalcular">Calcular</button>
+        
+        <div class="grupo-input">
+            <label for="promedio" class="etiqueta">Promedio:</label>
+            <input type="text" id="promedio" class="campo-texto campo-lectura" readonly>
+        </div>
+        <div class="grupo-input">
+            <label for="masAlta" class="etiqueta">Más Alta:</label>
+            <input type="text" id="masAlta" class="campo-texto campo-lectura" readonly>
+        </div>
+        <div class="grupo-input">
+            <label for="masBaja" class="etiqueta">Más Baja:</label>
+            <input type="text" id="masBaja" class="campo-texto campo-lectura" readonly>
+        </div>
+    </div>
+</body>
+
+</html>

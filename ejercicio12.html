@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de MXN a USD</title>
+    <link rel="stylesheet" href="css/ejercicio12.css">
+
+
+    <script src="js/ejercicio12.js"></script>
+</head>
+
+<body>
+    <div style="margin: 20px; text-align: left;">
+        <a href="index.html"
+            style="text-decoration: none; color: #007BFF; font-weight: bold; font-family: Arial, sans-serif;">Regresar
+            al índice</a>
+    </div>
+    
+    <div class="contenedor-principal">
+        <h1>Convertidor</h1>
+        <p>Sheinbaum coins a Dólares</p>
+
+        <div class="grupo-input">
+            <label for="pesos" class="etiqueta">Pesos que deseas convertir (MXN):</label>
+            <input type="number" id="pesos" class="campo-texto" placeholder="Ej: 500">
+        </div>
+        
+        <button type="button" id="btnConvertir">Convertir</button>
+        
+        <div class="grupo-input">
+            <label for="resultado" class="etiqueta">Resultado (USD):</label>
+            <input type="text" id="resultado" class="campo-texto campo-lectura" placeholder="Resultado" readonly>
+        </div>
+    </div>
+</body>
+
+</html>

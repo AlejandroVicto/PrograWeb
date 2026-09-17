@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/ejercicio16.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/ejercicio16.js"></script>
+
+</head>
+
+<body>
+    <div style="margin: 20px; text-align: left;">
+        <a href="index.html"
+            style="text-decoration: none; color: #007BFF; font-weight: bold; font-family: Arial, sans-serif;">Regresar
+            al índice</a>
+    </div>
+
+    <div class="contenedor-principal">
+        <h1>Calculadora</h1>
+        <p>Funciones Flecha</p>
+
+        <div class="grupo-input">
+            <label for="numero1" class="etiqueta">Número 1:</label>
+            <input type="text" id="numero1" class="campo-texto" required>
+        </div>
+        <div class="grupo-input">
+            <label for="numero2" class="etiqueta">Número 2:</label>
+            <input type="text" id="numero2" class="campo-texto" required>
+        </div>
+
+        <div class="grupo-botones">
+            <button type="button" id="btnSumar">Sumar</button>
+            <button type="button" id="btnRestar">Restar</button>
+            <button type="button" id="btnMultiplicar">Multiplicar</button>
+            <button type="button" id="btnDividir">Dividir</button>
+        </div>
+
+        <div class="grupo-input">
+            <label for="resultado" class="etiqueta">Resultado:</label>
+            <input type="text" id="resultado" class="campo-texto campo-lectura" readonly>
+        </div>
+    </div>
+
+</body>
+
+</html>
